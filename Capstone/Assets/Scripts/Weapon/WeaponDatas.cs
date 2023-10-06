@@ -8,5 +8,7 @@ public class WeaponDatas : ScriptableObject
     [Header("Weapon")]
     public Sprite sprite;
     public GameObject projectile;
-    public int activeShootPoint;
+    public string attackAnimStateName;
+    public string idleAnimStateName;
+    public int activeShootPointParent;
 }

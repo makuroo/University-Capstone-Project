@@ -9,22 +9,22 @@ public class ArrowTower : TowerBase
     void Start()
     {
         InitializeData();
-        currTime = _AttackSpeed;
+        currTime = _attackSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
         currTime -= Time.deltaTime;
-        if (currTime <= 0 && Input.GetKeyDown(KeyCode.Space))
+        if (currTime <= 0 && isAttacking)
         {
             Attack();
-            currTime = _AttackSpeed;
+            currTime = _attackSpeed;
         }
     }
 
     protected override void Attack()
     {
-        _TowerWeapon.GetComponent<ArrowWeapon>().Shoot();
+        _towerWeapon.GetComponent<ArrowWeapon>().Shoot();
     }
 }
