@@ -10,4 +10,5 @@ public class TowerDatas : ScriptableObject
     public float attackDamage;
     public float magicDamage;
     public float attackSpeed;
+    public int upgradePrice;
 }

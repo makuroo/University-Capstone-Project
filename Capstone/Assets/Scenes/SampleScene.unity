@@ -12916,7 +12916,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1777323122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12929,7 +12929,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c882c5a3d0492e48bc6d13029bb6e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
 --- !u!212 &1777323123
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13048,8 +13047,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c65bc7b4c53e6a4ea35ba49f7879bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
+  enemyData: {fileID: 11400000, guid: c94e62ab496dbcd4b904a25829bf815f, type: 2}
   currTower: {fileID: 0}
+  <_verySlowSpeed>k__BackingField: 0.5
+  <_slowSpeed>k__BackingField: 1
+  <_normalSpeed>k__BackingField: 1.5
+  <_fastSpeed>k__BackingField: 2
+  <_veryFastSpeed>k__BackingField: 2.5
 --- !u!1 &1792765303
 GameObject:
   m_ObjectHideFlags: 0
@@ -13083,8 +13087,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c65bc7b4c53e6a4ea35ba49f7879bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 9
+  enemyData: {fileID: 0}
   currTower: {fileID: 0}
+  <_verySlowSpeed>k__BackingField: 0
+  <_slowSpeed>k__BackingField: 0
+  <_normalSpeed>k__BackingField: 0
+  <_fastSpeed>k__BackingField: 0
+  <_veryFastSpeed>k__BackingField: 0
 --- !u!58 &1792765305
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -13134,7 +13143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c882c5a3d0492e48bc6d13029bb6e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
 --- !u!212 &1792765308
 SpriteRenderer:
   m_ObjectHideFlags: 0

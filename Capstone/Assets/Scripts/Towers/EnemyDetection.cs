@@ -39,7 +39,7 @@ public class EnemyDetection : MonoBehaviour
         if (collision.gameObject.CompareTag("EnemyEnter"))
         {
             enemies.Add(collision.transform.parent.gameObject);
-            collision.GetComponentInParent<Enemy>().currTower = this;
+            collision.GetComponentInParent<Enemy>()._currTower = this;
         }
     }
 
