@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] EnemyData enemyData;
+    [SerializeField] private EnemyData enemyData;
     public float _health { get; private set; }
     [SerializeField] private EnemyDetection currTower;
     public EnemyDetection _currTower { get; set; }
@@ -12,24 +12,24 @@ public class Enemy : MonoBehaviour
     public int _maxCoin { get; private set; }
 
     [Header("Speed Variable")]
-    [SerializeField] private static float verySlowSpeed;
 
+    private static float verySlowSpeed;
     [field:SerializeField]
     public float _verySlowSpeed { get; private set; }
 
-    [SerializeField] private static float slowSpeed;
+    private static float slowSpeed;
     [field: SerializeField]
     public float _slowSpeed { get; private set; }
 
-    [SerializeField] private static float normalSpeed;
+    private static float normalSpeed;
     [field: SerializeField]
     public float _normalSpeed { get; private set; }
 
-    [SerializeField] private static float fastSpeed;
+    private static float fastSpeed;
     [field: SerializeField]
     public float _fastSpeed { get; private set; }
 
-    [SerializeField] private static float veryFastSpeed;
+    private static float veryFastSpeed;
     [field: SerializeField]
     public float _veryFastSpeed { get; private set; }
 
@@ -43,19 +43,12 @@ public class Enemy : MonoBehaviour
         InitializeData();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-            
-    }
-
     public virtual void TakeDamage(float damage)
     {
         _health -= damage;
     }
 
-    public virtual void CheckHealth()
+    public virtual void OnDeath()
     {
         if (_health <= 0)
         {
@@ -77,7 +70,6 @@ public class Enemy : MonoBehaviour
         _speed = speedDict[enemyData.speedType];
         _minCoin = enemyData.minCoin;
         _maxCoin = enemyData.maxCoin;
-        Debug.Log("here");
     }
 
     private void InitializeDictionary()

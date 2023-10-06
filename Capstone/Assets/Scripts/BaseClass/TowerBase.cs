@@ -14,14 +14,10 @@ public abstract class TowerBase : MonoBehaviour
 
     [SerializeField] int tier;
     public int _tier { get; private set; }
-
     public float _attackDamage { get; private set; }
-
     public float _magicDamage { get; private set; }
-
     public float _attackSpeed { get; private set; }
-
-    public bool isAttacking;
+    public bool isAttacking { get; set; }
 
     public void InitializeData()
     {
