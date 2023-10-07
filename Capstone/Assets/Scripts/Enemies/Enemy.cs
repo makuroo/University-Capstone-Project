@@ -6,6 +6,9 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private EnemyData enemyData;
     public float _health { get; private set; }
+    public float _AR { get; private set; }
+    public float _MR { get; private set; }
+
     [SerializeField] private EnemyDetection currTower;
     public EnemyDetection _currTower { get; set; }
     public int _minCoin { get; private set; }
@@ -43,9 +46,9 @@ public class Enemy : MonoBehaviour
         InitializeData();
     }
 
-    public virtual void TakeDamage(float damage)
+    public virtual void TakeDamage(float attackDamage, float magicDamage)
     {
-        _health -= damage;
+        _health -= (attackDamage * (1-_AR) + magicDamage * (1-_MR));
     }
 
     public virtual void OnDeath()
@@ -66,7 +69,9 @@ public class Enemy : MonoBehaviour
     {
         InitializeDictionary();
 
-        _health = enemyData.health; 
+        _health = enemyData.health;
+        _AR = enemyData.AR;
+        _MR = enemyData.MR;
         _speed = speedDict[enemyData.speedType];
         _minCoin = enemyData.minCoin;
         _maxCoin = enemyData.maxCoin;

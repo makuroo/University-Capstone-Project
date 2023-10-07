@@ -18,6 +18,8 @@ public class EnemyData : ScriptableObject
     public Sprite sprite;
     public Animator _anim;
     public float health;
+    public float AR;
+    public float MR;
     public int minCoin;
     public int maxCoin;
     public SpeedType speedType;
